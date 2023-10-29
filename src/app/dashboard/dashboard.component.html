@@ -1,0 +1,43 @@
+<div class="dashboard-container">
+  <app-navbar></app-navbar>
+  <h1 class="dashboard-title">Welcome, {{ userFirstName }}</h1>
+
+  <div class="container">
+    <div class="input-container">
+      <input pInputText type="text" [(ngModel)]="taskInput" placeholder="Enter task description">
+      <button pButton type="button" label="{{ addButtonLabel }}" (click)="addTask()"></button>
+    </div>
+    <table class="task-list">
+      <thead>
+        <tr>
+          <th>Tasks List</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks" [ngClass]="{'completed-task': task.completed}">
+          <td>
+            <span [ngClass]="{'strikethrough': task.completed}">{{ task.description }}</span>
+          </td>
+          <td>
+            <input pCheckbox type="checkbox" [(ngModel)]="task.completed" (change)="toggleTaskCompletion(task)">
+          </td>
+          <td>
+            <button pButton type="button" label="Edit" class="edit-button" (click)="showEditDialog(task)"></button>
+            <button pButton type="button" label="Delete" class="delete-button" (click)="deleteTask(task)"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <p-dialog header="Edit Task" [(visible)]="editDialogVisible" [modal]="true" [style]="{ width: '500px' }">
+    <ng-template pTemplate="content">
+      <input class="d-input" type="text" [(ngModel)]="editedTaskDescription" placeholder="Enter task description">
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <button pButton label="Update" class="update-button" (click)="updateTask(selectedTask)"></button>
+    </ng-template>
+  </p-dialog>
+</div>

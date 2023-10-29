@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "firstName": "Nishant",
+      "lastName": "Kumar",
+      "email": "nishantkr090@gmail.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "firstName": "Nitish",
+      "lastName": "Thakur",
+      "email": "nitish@gmail.com",
+      "password": "Nitish000",
+      "id": 2
+    },
+    {
+      "firstName": "Ghanshyam",
+      "lastName": "Kumar",
+      "email": "bca1902113@gmail.com",
+      "password": "123456",
+      "id": 3
+    }
+  ],
+  "tasks": [
+    {
+      "userId": 1,
+      "id": 1,
+      "description": "hello",
+      "completed": true
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "description": "hyyy",
+      "completed": true
+    },
+    {
+      "userId": 2,
+      "id": 3,
+      "description": "1ewsde",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": 4,
+      "description": "nishant",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": 6,
+      "description": "heyyy",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": 7,
+      "description": "ghanshyam1",
+      "completed": false
+    }
+  ]
+}
